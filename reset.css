@@ -1,0 +1,256 @@
+/*==========================================================
+    RESET CSS
+
+    T-SCA
+==========================================================*/
+
+/* ==========================================
+   RESET UNIVERSAL
+========================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+/* ==========================================
+   HTML
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+    -webkit-text-size-adjust:100%;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    min-height:100vh;
+
+    font-family:var(--font);
+
+    background:var(--background);
+
+    color:var(--text);
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+   IMAGENS
+========================================== */
+
+img,
+picture,
+svg,
+video,
+canvas{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* ==========================================
+   LISTAS
+========================================== */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* ==========================================
+   FORMULÁRIOS
+========================================== */
+
+input,
+textarea,
+select,
+button{
+
+    font:inherit;
+
+    color:inherit;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+button{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   TABELAS
+========================================== */
+
+table{
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-weight:inherit;
+
+}
+
+/* ==========================================
+   PARÁGRAFOS
+========================================== */
+
+p{
+
+    overflow-wrap:break-word;
+
+}
+
+/* ==========================================
+   SEÇÕES
+========================================== */
+
+section{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+/* ==========================================
+   IFRAME
+========================================== */
+
+iframe{
+
+    border:0;
+
+}
+
+/* ==========================================
+   SELEÇÃO
+========================================== */
+
+::selection{
+
+    background:rgba(255,255,255,.18);
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#090909;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2A2A2A;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#444444;
+
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+:focus-visible{
+
+    outline:2px solid rgba(255,255,255,.30);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================
+   DISABLED
+========================================== */
+
+:disabled{
+
+    cursor:not-allowed;
+
+    opacity:.55;
+
+}

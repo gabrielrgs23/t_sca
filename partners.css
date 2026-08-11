@@ -1,0 +1,1037 @@
+/* ==========================================================
+   PARTNERS
+========================================================== */
+
+.partners{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:140px 6%;
+
+    background:#050505;
+
+}
+
+.partners .container{
+
+    max-width:1600px;
+
+    margin:0 auto;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.partners-header{
+
+    max-width:820px;
+
+    margin:0 auto 90px;
+
+    text-align:center;
+
+}
+
+.partners-header span{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:#D62828;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+}
+
+.partners-header h2{
+
+    color:#FFF;
+
+    font-size:3.3rem;
+
+    line-height:1.1;
+
+    letter-spacing:-.04em;
+
+    margin-bottom:26px;
+
+}
+
+.partners-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#9B9B9B;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.partners-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:28px;
+
+}
+
+.partner-half{
+
+    grid-column:span 3;
+
+}
+
+.partner-third{
+
+    grid-column:span 2;
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.partner-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    height:430px;
+
+    overflow:hidden;
+
+    border-radius:26px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    text-decoration:none;
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+
+}
+
+.partner-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(214,40,40,.35);
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================================
+   IMAGEM
+========================================================== */
+
+.partner-image{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    overflow:hidden;
+
+}
+
+.partner-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    /* FOTO ORIGINAL, SEM ESCURECER */
+    opacity:1;
+
+    filter:none;
+
+    transform:scale(1);
+
+    transition:
+        transform .6s ease,
+        filter .4s ease;
+
+}
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.partner-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.00) 0%,
+            rgba(0,0,0,0.08) 35%,
+            rgba(0,0,0,0.42) 72%,
+            rgba(0,0,0,0.72) 100%
+        );
+
+    transition:
+        background .4s ease;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.partner-card:hover img {
+
+    transform: scale(1.03);
+
+    opacity: 1;
+
+    filter: none;
+
+}
+
+/* ==========================================================
+   GLOW
+========================================================== */
+
+.partner-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:3;
+
+    border-radius:26px;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle at top,
+
+            rgba(214,40,40,.12),
+
+            transparent 70%
+
+        );
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.partner-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   CONTEÚDO
+========================================================== */
+
+.partner-content{
+
+    position:relative;
+
+    z-index:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    width:100%;
+
+    height:100%;
+
+    padding:38px;
+
+    transition:
+        transform .35s ease;
+
+}
+
+.partner-card:hover .partner-content{
+
+    transform:translateY(-6px);
+
+}
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.partner-content h3{
+
+    margin:0 0 18px;
+
+    color:#FFF;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    letter-spacing:-.03em;
+
+    transition:.35s;
+
+}
+
+/* Primeira linha */
+
+.partner-half h3{
+
+    font-size:2.3rem;
+
+}
+
+/* Segunda linha */
+
+.partner-third h3{
+
+    font-size:1.9rem;
+
+}
+
+.partner-card:hover h3{
+
+    color:#FFF;
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.partner-content p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.78);
+
+    font-size:.96rem;
+
+    line-height:1.65;
+
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.partner-card:hover p{
+
+    color:#FFF;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.partner-footer{
+
+    margin-top:28px;
+
+}
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+.partner-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#FFF;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    letter-spacing:.02em;
+
+    transition:
+        color .35s ease,
+        gap .35s ease;
+
+}
+
+.partner-link i{
+
+    transition:transform .35s ease;
+
+}
+
+.partner-card:hover .partner-link{
+
+    color:#D62828;
+
+    gap:18px;
+
+}
+
+.partner-card:hover .partner-link i{
+
+    transform:translateX(6px);
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width:1400px){
+
+    .partners{
+
+        padding:120px 5%;
+
+    }
+
+}
+
+/* ========================================================== */
+
+@media (max-width:1200px){
+
+    .partners-header h2{
+
+        font-size:2.9rem;
+
+    }
+
+    .partners-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .partner-half,
+    .partner-third{
+
+        grid-column:span 1;
+
+        height:400px;
+
+    }
+
+}
+
+/* ========================================================== */
+
+@media (max-width:992px){
+
+    .partners{
+
+        padding:100px 0;
+
+    }
+
+    .partners-header{
+
+        margin-bottom:60px;
+
+    }
+
+    .partners-header h2{
+
+        font-size:2.4rem;
+
+    }
+
+    .partners-header p{
+
+        font-size:1rem;
+
+    }
+
+    .partner-card{
+
+        height:390px;
+
+    }
+
+    .partner-content{
+
+        padding:32px;
+
+    }
+
+    .partner-content h3{
+
+        font-size:1.8rem;
+
+    }
+
+    .partner-content p{
+
+        font-size:.92rem;
+
+    }
+
+}
+
+/* ========================================================== */
+
+@media (max-width:768px){
+
+    .partners-grid{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .partner-half,
+    .partner-third{
+
+        grid-column:span 1;
+
+    }
+
+    .partner-card{
+
+        height:360px;
+
+    }
+
+    .partners-header h2{
+
+        font-size:2rem;
+
+    }
+
+    .partners-header p{
+
+        font-size:.95rem;
+
+    }
+
+    .partner-content{
+
+        padding:28px;
+
+    }
+
+    .partner-content h3{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+/* ========================================================== */
+
+@media (max-width:576px){
+
+    .partners{
+
+        padding:80px 0;
+
+    }
+
+    .partners-header{
+
+        margin-bottom:45px;
+
+    }
+
+    .partner-card{
+
+        height:330px;
+
+        border-radius:20px;
+
+    }
+
+    .partner-content{
+
+        padding:24px;
+
+    }
+
+    .partner-content h3{
+
+        font-size:1.5rem;
+
+    }
+
+    .partner-content p{
+
+        display:none;
+
+    }
+
+    .partner-link{
+
+        font-size:.9rem;
+
+    }
+
+}
+
+/* ==========================================================
+   CATÁLOGOS
+========================================================== */
+
+.catalogs{
+
+    padding:140px 0;
+
+    background:#050505;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.catalogs::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.catalogs-grid{
+
+    display:grid;
+
+    grid-template-columns:1.15fr .85fr;
+
+    gap:90px;
+
+    align-items:start;
+
+}
+
+.catalogs-content{
+
+    max-width:700px;
+
+}
+
+.catalogs-content h2{
+
+    font-size:4.2rem;
+
+    line-height:.95;
+
+    font-weight:800;
+
+    letter-spacing:-.04em;
+
+    margin:26px 0;
+
+}
+
+.catalog-description{
+
+    max-width:620px;
+
+    font-size:1.25rem;
+
+    color:#A8A8A8;
+
+    line-height:1.8;
+
+    margin-bottom:50px;
+
+}
+
+/*==========================================================
+BENEFÍCIOS
+==========================================================*/
+
+.catalog-features{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+    margin-top:55px;
+
+}
+
+.catalog-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 24px;
+
+    background:#121212;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.catalog-feature:hover{
+
+    transform:translateX(8px);
+
+    border-color:rgba(214,40,40,.35);
+
+    box-shadow:0 15px 35px rgba(214,40,40,.12);
+
+}
+
+.feature-icon{
+
+    width:52px;
+
+    height:52px;
+
+    min-width:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(214,40,40,.15);
+
+    border:1px solid rgba(214,40,40,.30);
+
+}
+
+.feature-icon i{
+
+    color:#D62828;
+
+    font-size:18px;
+
+}
+
+.feature-text{
+
+    color:#FFF;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+}
+
+/*==========================================================
+FORMULÁRIO
+==========================================================*/
+
+.catalog-form{
+
+    margin-top:100px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.catalog-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.catalog-form input,
+.catalog-form textarea,
+.catalog-form select{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:#1A1A1A;
+
+    color:#FFF;
+
+    padding:18px 20px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.catalog-form input,
+.catalog-form select{
+
+    height:58px;
+
+}
+
+.catalog-form textarea{
+
+    resize:none;
+
+    min-height:130px;
+
+}
+
+.catalog-form input:focus,
+.catalog-form textarea:focus,
+.catalog-form select:focus{
+
+    border:1px solid #D62828;
+
+    background:#181818;
+
+}
+
+.catalog-form h4{
+
+    color:#FFF;
+
+    font-size:18px;
+
+    margin-top:10px;
+
+    margin-bottom:6px;
+
+}
+
+/*==========================================================
+CHECKBOXES
+==========================================================*/
+
+.partners-checkbox{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    margin-bottom:15px;
+
+}
+
+.partners-checkbox label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px 18px;
+
+    border-radius:12px;
+
+    background:#171717;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#FFF;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.partners-checkbox label:hover{
+
+    border-color:#D62828;
+
+    background:#1D1D1D;
+
+}
+
+.partners-checkbox input{
+
+    appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:5px;
+
+    border:2px solid #666;
+
+    transition:.25s;
+
+}
+
+.partners-checkbox input:checked{
+
+    background:#D62828;
+
+    border-color:#D62828;
+
+}
+
+.partners-checkbox label:has(input:checked){
+
+    background:rgba(214,40,40,.08);
+
+    border-color:#D62828;
+
+}
+
+/*==========================================================
+BOTÃO
+==========================================================*/
+
+.catalog-submit{
+
+    width:100%;
+
+    height:62px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#D62828;
+
+    color:#FFF;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    transition:.35s;
+
+}
+
+.catalog-submit:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 20px 40px rgba(214,40,40,.28);
+
+}
+
+.catalog-submit i{
+
+    transition:.35s;
+
+}
+
+.catalog-submit:hover i{
+
+    transform:translateX(6px);
+
+}
+
