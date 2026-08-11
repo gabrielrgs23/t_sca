@@ -1,0 +1,1099 @@
+/*==========================================================
+HERO
+==========================================================*/
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#050505;
+
+    isolation:isolate;
+
+}
+
+/*==========================================================
+BACKGROUND
+==========================================================*/
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("../assets/cozinha.png");
+
+    background-size:cover;
+
+    background-position:center right;
+
+    background-repeat:no-repeat;
+
+    transform:scale(1.05);
+
+    z-index:0;
+
+    transition:
+
+        transform 1.8s ease;
+
+}
+
+/*==========================================================
+OVERLAY
+==========================================================*/
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        rgba(5,5,5,.96) 0%,
+
+        rgba(5,5,5,.90) 22%,
+
+        rgba(5,5,5,.70) 42%,
+
+        rgba(5,5,5,.28) 70%,
+
+        rgba(5,5,5,.05) 100%
+
+    );
+
+}
+
+/*==========================================================
+LIGHT
+==========================================================*/
+
+.hero-gradient{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    background:
+
+        radial-gradient(
+
+            circle at left center,
+
+            rgba(215,38,30,.12),
+
+            transparent 55%
+
+        );
+
+}
+
+/*==========================================================
+CONTAINER
+==========================================================*/
+
+.hero .container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(1400px,92%);
+
+    margin:auto;
+
+}
+
+/*==========================================================
+CONTENT
+==========================================================*/
+
+.hero-content{
+
+    max-width:690px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+/*==========================================================
+TAG
+==========================================================*/
+
+.hero-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:28px;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+}
+
+.hero-tag::before{
+
+    content:"";
+
+    width:42px;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:#D7261E;
+
+}
+
+/*==========================================================
+TITLE
+==========================================================*/
+
+.hero-title{
+
+    margin:0;
+
+    max-width:680px;
+
+    font-size:clamp(72px,7vw,112px);
+
+    font-weight:800;
+
+    line-height:.90;
+
+    letter-spacing:-5px;
+
+    color:#FFFFFF;
+
+    text-wrap:balance;
+
+    text-shadow:
+
+        0 10px 45px rgba(0,0,0,.35);
+
+}
+
+/*==========================================================
+DESCRIPTION
+==========================================================*/
+
+.hero-description{
+
+    margin-top:34px;
+
+    max-width:620px;
+
+    font-size:22px;
+
+    line-height:1.75;
+
+    color:rgba(255,255,255,.74);
+
+}
+
+/*==========================================================
+BUTTONS
+==========================================================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-top:54px;
+
+}
+
+.hero-buttons .btn-primary{
+
+    min-width:240px;
+
+    height:64px;
+
+}
+
+.hero-buttons .btn-secondary{
+
+    min-width:260px;
+
+    height:64px;
+
+}
+
+/*==========================================================
+CONTENT SPACING
+==========================================================*/
+
+.hero-content>*{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/*==========================================================
+    HERO ANIMATION
+==========================================================*/
+
+.hero-content{
+
+    animation:heroContent 1s cubic-bezier(.22,1,.36,1);
+
+}
+
+@keyframes heroContent{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+    BACKGROUND MOTION
+==========================================================*/
+
+.hero-background{
+
+    animation:heroBackground 2.5s ease forwards;
+
+}
+
+@keyframes heroBackground{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.12);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.05);
+
+    }
+
+}
+
+/*==========================================================
+    HOVER EFFECT
+==========================================================*/
+
+.hero:hover .hero-background{
+
+    transform:scale(1.08);
+
+}
+
+/*==========================================================
+    VIGNETTE
+==========================================================*/
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            transparent 55%,
+
+            rgba(0,0,0,.18) 82%,
+
+            rgba(0,0,0,.45) 100%
+
+        );
+
+}
+
+/*==========================================================
+    BOTTOM FADE
+==========================================================*/
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:240px;
+
+    z-index:3;
+
+    background:
+
+        linear-gradient(
+
+            transparent,
+
+            #050505
+
+        );
+
+}
+
+/*==========================================================
+    CONTENT DEPTH
+==========================================================*/
+
+.hero-title,
+
+.hero-description,
+
+.hero-buttons,
+
+.hero-tag{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/*==========================================================
+    BUTTON SHADOW
+==========================================================*/
+
+.hero-buttons .btn-primary{
+
+    box-shadow:
+
+        0 24px 55px rgba(215,38,30,.30);
+
+}
+
+.hero-buttons .btn-primary:hover{
+
+    box-shadow:
+
+        0 34px 70px rgba(215,38,30,.42);
+
+}
+
+/*==========================================================
+    PERFORMANCE
+==========================================================*/
+
+.hero,
+
+.hero-background,
+
+.hero-overlay,
+
+.hero-gradient{
+
+    will-change:transform;
+
+}
+
+/*==========================================================
+    HERO LAYOUT
+==========================================================*/
+
+.hero{
+
+    padding-top:140px;
+
+    padding-bottom:100px;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+
+    max-width:680px;
+
+}
+
+/*==========================================================
+    BACKGROUND POSITION
+==========================================================*/
+
+.hero-background{
+
+    background-position:
+
+        right center;
+
+    background-size:
+
+        cover;
+
+    opacity:.95;
+
+}
+
+/*==========================================================
+    EXTRA SHADOW
+==========================================================*/
+
+.hero-overlay::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle at 80% 50%,
+
+            transparent 0%,
+
+            rgba(0,0,0,.12) 60%,
+
+            rgba(0,0,0,.32) 100%
+
+        );
+
+}
+
+/*==========================================================
+    TITLE
+==========================================================*/
+
+.hero-title{
+
+    margin-bottom:28px;
+
+}
+
+.hero-title span{
+
+    display:block;
+
+}
+
+/*==========================================================
+    DESCRIPTION
+==========================================================*/
+
+.hero-description{
+
+    margin-bottom:46px;
+
+}
+
+/*==========================================================
+    BUTTONS
+==========================================================*/
+
+.hero-buttons{
+
+    flex-wrap:wrap;
+
+}
+
+.hero-buttons .btn-primary{
+
+    min-width:240px;
+
+}
+
+.hero-buttons .btn-secondary{
+
+    min-width:240px;
+
+}
+
+/*==========================================================
+    FLOAT EFFECT
+==========================================================*/
+
+.hero-background{
+
+    animation:
+
+        heroBackground 2.5s ease,
+
+        heroFloat 10s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:
+
+            scale(1.05)
+
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+
+            scale(1.07)
+
+            translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:
+
+            scale(1.05)
+
+            translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+    DESKTOP LARGE
+==========================================================*/
+
+@media (min-width:1800px){
+
+    .hero{
+
+        min-height:110vh;
+
+    }
+
+    .hero-content{
+
+        max-width:760px;
+
+    }
+
+    .hero-title{
+
+        font-size:128px;
+
+    }
+
+    .hero-description{
+
+        max-width:680px;
+
+        font-size:24px;
+
+    }
+
+    .hero-background{
+
+        background-size:cover;
+
+        background-position:right center;
+
+    }
+
+}
+
+/*==========================================================
+    DESKTOP
+==========================================================*/
+
+@media (max-width:1600px){
+
+    .hero-title{
+
+        font-size:96px;
+
+    }
+
+    .hero-description{
+
+        font-size:21px;
+
+    }
+
+}
+
+/*==========================================================
+    NOTEBOOK
+==========================================================*/
+
+@media (max-width:1366px){
+
+    .hero{
+
+        min-height:900px;
+
+    }
+
+    .hero-title{
+
+        font-size:82px;
+
+    }
+
+    .hero-description{
+
+        max-width:560px;
+
+        font-size:19px;
+
+    }
+
+    .hero-background{
+
+        background-position:68% center;
+
+    }
+
+}
+
+/*==========================================================
+    SMALL NOTEBOOK
+==========================================================*/
+
+@media (max-width:1200px){
+
+    .hero{
+
+        min-height:820px;
+
+    }
+
+    .hero-title{
+
+        font-size:72px;
+
+    }
+
+    .hero-description{
+
+        font-size:18px;
+
+    }
+
+    .hero-background{
+
+        background-position:72% center;
+
+    }
+
+}
+
+/*==========================================================
+    TABLET
+==========================================================*/
+
+@media (max-width:992px){
+
+    .hero{
+
+        min-height:760px;
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+    }
+
+    .hero-title{
+
+        font-size:58px;
+
+    }
+
+    .hero-description{
+
+        max-width:100%;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .hero-buttons a{
+
+        width:100%;
+
+    }
+
+    .hero-background{
+
+        opacity:.28;
+
+        background-position:center right;
+
+    }
+
+}
+
+/*==========================================================
+    BACKGROUND SIZE CONTROL
+==========================================================*/
+
+/* Monitores UltraWide */
+
+@media (min-width:1920px){
+
+    .hero-background{
+
+        background-size:1800px auto;
+
+        background-position:right center;
+
+    }
+
+}
+
+/* Desktop */
+
+@media (max-width:1919px){
+
+    .hero-background{
+
+        background-size:1600px auto;
+
+        background-position:right center;
+
+    }
+
+}
+
+/* Notebook */
+
+@media (max-width:1600px){
+
+    .hero-background{
+
+        background-size:1450px auto;
+
+        background-position:115% center;
+
+    }
+
+}
+
+/* Notebook Full HD */
+
+@media (max-width:1440px){
+
+    .hero-background{
+
+        background-size:1350px auto;
+
+        background-position:120% center;
+
+    }
+
+}
+
+/* Notebook 1366 */
+
+@media (max-width:1366px){
+
+    .hero-background{
+
+        background-size:1250px auto;
+
+        background-position:125% center;
+
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    .hero-background{
+
+        background-size:1150px auto;
+
+        background-position:140% center;
+
+        opacity:.22;
+
+    }
+
+}
+
+/*==========================================================
+BACKGROUND
+==========================================================*/
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.hero-background::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("../assets/cozinha.webp");
+
+    background-repeat:no-repeat;
+
+    background-position:right center;
+
+    background-size:min(1700px,92vw) auto;
+
+    transform:scale(1.05);
+
+    transition:
+
+        transform 1.4s ease;
+
+}
+
+/*==========================================================
+    MOBILE
+==========================================================*/
+
+@media (max-width:768px){
+
+    .hero{
+
+        min-height:auto;
+
+        padding:140px 0 80px;
+
+    }
+
+    .hero .container{
+
+        min-height:auto;
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+        padding-top:0;
+
+    }
+
+    .hero-tag{
+
+        font-size:11px;
+
+        letter-spacing:.18em;
+
+        margin-bottom:20px;
+
+    }
+
+    .hero-title{
+
+        font-size:clamp(42px,11vw,58px);
+
+        line-height:1;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hero-description{
+
+        margin-top:24px;
+
+        font-size:17px;
+
+        line-height:1.7;
+
+        max-width:100%;
+
+    }
+
+    .hero-buttons{
+
+        width:100%;
+
+        flex-direction:column;
+
+        gap:16px;
+
+        margin-top:36px;
+
+    }
+
+    .hero-buttons .btn-primary,
+
+    .hero-buttons .btn-secondary{
+
+        width:100%;
+
+        min-width:100%;
+
+    }
+
+    .hero-background::before{
+
+        background-size:1100px auto;
+
+        background-position:78% center;
+
+        opacity:.22;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .hero{
+
+        padding:120px 0 70px;
+
+    }
+
+    .hero-background::before{
+
+        background-size:980px auto;
+
+        background-position:82% center;
+
+        opacity:.18;
+
+    }
+
+}
+
+/*==========================================================
+    PERFORMANCE
+==========================================================*/
+
+.hero,
+
+.hero-background,
+
+.hero-background::before,
+
+.hero-overlay,
+
+.hero-gradient,
+
+.hero-content{
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+
+    will-change:transform;
+
+}
+
+.hero-background{
+
+    contain:paint;
+
+}
+
+/*==========================================================
+    ACCESSIBILITY
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+    .hero *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
+
+}
+
+/*==========================================================
+    END HERO
+==========================================================*/

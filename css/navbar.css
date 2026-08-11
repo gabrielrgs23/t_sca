@@ -1,0 +1,891 @@
+/*==========================================================
+    HEADER
+==========================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:18px 0;
+
+    transition:
+
+        background .35s ease,
+
+        backdrop-filter .35s ease,
+
+        padding .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+/*==========================================================
+    SCROLLED
+==========================================================*/
+
+.header.scrolled{
+
+    background:rgba(5,5,5,.82);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+
+        0 12px 40px rgba(0,0,0,.18);
+
+}
+
+/*==========================================================
+    SHRINK
+==========================================================*/
+
+.header.shrink{
+
+    padding:18px 0;
+
+}
+
+/*==========================================================
+    NAVBAR
+==========================================================*/
+
+.navbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    min-height:110px;
+
+    gap:48px;
+
+}
+
+/*==========================================================
+    LOGO
+==========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    flex:0 0 320px;
+
+    text-decoration:none;
+
+    transition:
+
+        transform .35s ease,
+
+        opacity .35s ease;
+
+}
+
+.logo:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.logo img{
+
+    display:block;
+
+    width:auto;
+
+    height:130px;
+
+    object-fit:contain;
+
+    filter:
+
+        drop-shadow(0 6px 18px rgba(0,0,0,.25));
+
+    transition:
+
+        transform .45s ease,
+
+        filter .45s ease;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.03);
+
+    filter:
+
+        brightness(1.05)
+
+        drop-shadow(0 10px 24px rgba(0,0,0,.35));
+
+}
+
+/*==========================================================
+    HEADER SHRINK
+==========================================================*/
+
+.header.shrink .logo img{
+
+    height:96px;
+
+}
+
+/*==========================================================
+    RESPONSIVE
+==========================================================*/
+
+@media (max-width:992px){
+
+    .logo{
+
+        flex:0 0 auto;
+
+    }
+
+    .logo img{
+
+        height:68px;
+
+    }
+
+    .header.shrink .logo img{
+
+        height:60px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .logo img{
+
+        height:56px;
+
+    }
+
+    .header.shrink .logo img{
+
+        height:50px;
+
+    }
+
+}
+
+/*==========================================================
+    NAV LINKS
+==========================================================*/
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:42px;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.nav-links li{
+
+    list-style:none;
+
+}
+
+/*==========================================================
+    NAV LINK
+==========================================================*/
+
+.nav-links a{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    height:42px;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:15px;
+
+    font-weight:500;
+
+    letter-spacing:.02em;
+
+    transition:
+
+        color .35s ease,
+
+        transform .35s ease;
+
+}
+
+.nav-links a:hover{
+
+    color:#FFFFFF;
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================================================
+    UNDERLINE
+==========================================================*/
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:6px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:#D7261E;
+
+    transition:width .35s ease;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/*==========================================================
+    ACTIVE LINK
+==========================================================*/
+
+.nav-links a.active{
+
+    color:#FFFFFF;
+
+}
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+/*==========================================================
+    NAV BUTTON
+==========================================================*/
+
+.nav-button{
+
+    margin-left:auto;
+
+    min-width:210px;
+
+    height:56px;
+
+    padding:0 30px;
+
+    border-radius:999px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    box-shadow:
+
+        0 18px 40px rgba(215,38,30,.25);
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+.nav-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 24px 60px rgba(215,38,30,.40);
+
+}
+
+/*==========================================================
+    DESKTOP SPACING
+==========================================================*/
+
+@media (min-width:1200px){
+
+    .navbar{
+
+        min-height:72px;
+
+    }
+
+}
+
+/*==========================================================
+    MENU TOGGLE
+==========================================================*/
+
+.menu-toggle{
+
+    display:none;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:1200;
+
+}
+
+.menu-toggle span{
+
+    display:block;
+
+    width:26px;
+
+    height:2px;
+
+    margin:6px auto;
+
+    background:#FFFFFF;
+
+    border-radius:999px;
+
+    transition:all .35s ease;
+
+}
+
+/*==========================================================
+    TOGGLE ANIMATION
+==========================================================*/
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:
+        translateY(8px)
+        rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:
+        translateY(-8px)
+        rotate(-45deg);
+
+}
+
+/*==========================================================
+    MOBILE MENU
+==========================================================*/
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:28px;
+
+    background:rgba(5,5,5,.96);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:translateY(-20px);
+
+    transition:
+
+        opacity .35s ease,
+
+        transform .35s ease,
+
+        visibility .35s ease;
+
+    z-index:1100;
+
+}
+
+.mobile-menu.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:translateY(0);
+
+}
+
+/*==========================================================
+    MOBILE LINKS
+==========================================================*/
+
+.mobile-menu a{
+
+    color:#FFFFFF;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+
+}
+
+.mobile-menu a:hover{
+
+    color:#D7261E;
+
+    transform:translateY(-2px);
+
+}
+
+.mobile-menu .btn-primary{
+
+    margin-top:20px;
+
+    width:260px;
+
+}
+
+/*==========================================================
+    RESPONSIVE
+==========================================================*/
+
+@media (max-width:992px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .nav-button{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+}
+
+/*==========================================================
+    LOGO EFFECT
+==========================================================*/
+
+.logo{
+
+    transition:
+
+        transform .35s ease,
+
+        opacity .35s ease;
+
+}
+
+.logo:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.95;
+
+}
+
+.logo img{
+
+    transition:
+
+        transform .45s ease,
+
+        filter .45s ease;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.03);
+
+    filter:brightness(1.08);
+
+}
+
+/*==========================================================
+    NAVBAR BORDER
+==========================================================*/
+
+.header::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.05);
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+}
+
+.header.scrolled::after{
+
+    opacity:1;
+
+}
+
+/*==========================================================
+    LINK SPACING
+==========================================================*/
+
+.nav-links{
+
+    flex:1;
+
+    justify-content:center;
+
+}
+
+/*==========================================================
+    NAVBAR CONTENT
+==========================================================*/
+
+.navbar{
+
+    position:relative;
+
+}
+
+.navbar>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==========================================================
+    CTA
+==========================================================*/
+
+.nav-button{
+
+    white-space:nowrap;
+
+}
+
+.nav-button:active{
+
+    transform:scale(.98);
+
+}
+
+/*==========================================================
+    MENU LINKS
+==========================================================*/
+
+.nav-links a{
+
+    overflow:hidden;
+
+}
+
+.nav-links a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:100%;
+
+    transform:translateY(100%);
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.03)
+
+    );
+
+    transition:transform .35s ease;
+
+    z-index:-1;
+
+}
+
+.nav-links a:hover::before{
+
+    transform:translateY(0);
+
+}
+
+/*==========================================================
+    HEADER LOADED
+==========================================================*/
+
+body.page-loaded .header{
+
+    animation:headerFade .7s ease;
+
+}
+
+@keyframes headerFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+    TABLET
+==========================================================*/
+
+@media (max-width:1200px){
+
+    .navbar{
+
+        gap:28px;
+
+    }
+
+    .nav-links{
+
+        gap:28px;
+
+    }
+
+    .nav-button{
+
+        min-width:190px;
+
+        padding:0 24px;
+
+    }
+
+}
+
+/*==========================================================
+    MOBILE
+==========================================================*/
+
+@media (max-width:992px){
+
+    .header{
+
+        padding:20px 0;
+
+    }
+
+    .navbar{
+
+        min-height:70px;
+
+    }
+
+    .logo img{
+
+        height:44px;
+
+    }
+
+    .header.shrink .logo img{
+
+        height:40px;
+
+    }
+
+}
+
+/*==========================================================
+    SMALL MOBILE
+==========================================================*/
+
+@media (max-width:576px){
+
+    .header{
+
+        padding:16px 0;
+
+    }
+
+    .logo img{
+
+        height:38px;
+
+    }
+
+    .menu-toggle{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+    .menu-toggle span{
+
+        width:24px;
+
+    }
+
+    .mobile-menu{
+
+        gap:22px;
+
+    }
+
+    .mobile-menu a{
+
+        font-size:24px;
+
+    }
+
+    .mobile-menu .btn-primary{
+
+        width:220px;
+
+        height:54px;
+
+    }
+
+}
+
+/*==========================================================
+    PERFORMANCE
+==========================================================*/
+
+.header,
+
+.navbar,
+
+.nav-links,
+
+.mobile-menu{
+
+    will-change:transform;
+
+}
+
+.logo img{
+
+    image-rendering:auto;
+
+}
+
+/*==========================================================
+    ACCESSIBILITY
+==========================================================*/
+
+.nav-links a:focus-visible,
+
+.mobile-menu a:focus-visible,
+
+.nav-button:focus-visible{
+
+    outline:2px solid #D7261E;
+
+    outline-offset:5px;
+
+    border-radius:999px;
+
+}
